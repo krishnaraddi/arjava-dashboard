@@ -39,11 +39,19 @@ def inject_css():
     }
 
     .kpi-card {
-        background-color: #FFE797;
+        background-color: #F0F2F6;
         padding: 20px;
         border-radius: 10px;
         box-shadow: 0 2px 5px rgba(180,82,83,0.1);
         color: #FCB53B;  /* KPI card text: black */
+    }
+    
+    .intro-line {
+        font-size: 20px;
+        font-weight: 500;
+        color: #000000;  /* Black text */
+        margin-bottom: 10px;
+        font-family: 'Segoe UI', sans-serif;
     }
 
     .agent-box {
@@ -64,6 +72,9 @@ with open("assets/aarjava_logo.png", "rb") as f:
 st.markdown(f"<img src='data:image/png;base64,{logo_data}' class='logo'>", unsafe_allow_html=True)
 st.markdown("<div class='header'>Aarjava Agentic Dashboard</div>", unsafe_allow_html=True)
 
+st.markdown('<div class="intro-line">Introducing Aarjava—Agentic Intelligence for Industrial Autonomy…</div>', unsafe_allow_html=True)
+st.text("")
+st.text("")
 # ─── Agent Coordination ───────────────────────────────────────
 st.subheader("Agent Coordination")
 agent_data = get_pubsub_data()
