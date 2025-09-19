@@ -1,0 +1,42 @@
+name: Deploy Aarjava Dashboard to Cloud Run
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+
+    - name: Authenticate with Google Cloud
+      uses: google-github-actions/auth@v1
+      with:
+        credentials_json: ${{ secrets.GCP_SA_KEY }}
+
+    - name: Set up gcloud CLI
+      uses: google-github-actions/setup-gcloud@v1
+      with:
+        project_id: arjava-jkcement-ai
+
+    - name: Deploy to Cloud Run
+      run: |
+        gcloud builds submit --tag gcr.io/arjava-jkcement-ai/arjava-dashboard
+        gcloud run deploy arjava-dashboard \
+          --image gcr.io/arjava-jkcement-ai/arjava-dashboard \
+          --platform=managed \
+          --region=asia-south1 \
+          --allow-unauthenticated
