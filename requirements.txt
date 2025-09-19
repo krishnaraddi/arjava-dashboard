@@ -3,3 +3,4 @@ plotly
 google-cloud-pubsub
 google-cloud-monitoring
 fastapi
+uvicorn

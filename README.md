@@ -32,3 +32,33 @@ Aarjava Dashboard is a Streamlit-based web application designed to visualize age
 ---
 
 ## 📦 Folder Structure
+arjava-dashboard/ ├── dashboard.py               # Main Streamlit app ├── utils/ │   ├── pubsub_reader.py       # Agent status via Pub/Sub │   └── monitoring.py          # ESG metrics generator ├── assets/ │   └── aarjava_logo.png       # Branded logo ├── requirements.txt ├── Dockerfile ├── .github/ │   └── workflows/deploy.yaml # CI/CD pipeline
+
+
+---
+
+## 🔧 Deployment
+
+To deploy on Google Cloud Run:
+
+```bash
+gcloud builds submit --tag gcr.io/YOUR_PROJECT/arjava-dashboard
+gcloud run deploy arjava-dashboard \
+  --image gcr.io/YOUR_PROJECT/arjava-dashboard \
+  --platform=managed \
+  --region=asia-south1 \
+  --allow-unauthenticated
+  📄 License
+This project is licensed under the MIT License.
+Feel free to fork, extend, and deploy responsibly.
+
+Built by 
+[Krishnaraddi V K](https://www.linkedin.com/in/krishnaraddi/)
+Founder, Aarjava Intelligence
+Mechanical Engineer with 15+ years in IT
+Specializing in Gen AI, Agentic AI, and ESG-aligned industrial transformation
+
+
+ 
+
+
