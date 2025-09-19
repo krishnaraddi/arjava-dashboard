@@ -21,7 +21,7 @@ def inject_css():
     st.markdown("""
     <style>
     body {
-        background-color: #f4f4f4;
+        background-color: #FFE797;
         font-family: 'Segoe UI', sans-serif;
         color: #000000;  /* Default text color: black */
     }
@@ -34,16 +34,16 @@ def inject_css():
     .header {
         font-size: 32px;
         font-weight: bold;
-        color: #ffffff !important;  /* Header text: white */
+        color: #FCB53B !important;  /* Header text: white */
         margin-bottom: 20px;
     }
 
     .kpi-card {
-        background-color: #ffffff;
+        background-color: #FFE797;
         padding: 20px;
         border-radius: 10px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        color: #000000;  /* KPI card text: black */
+        box-shadow: 0 2px 5px rgba(180,82,83,0.1);
+        color: #FCB53B;  /* KPI card text: black */
     }
 
     .agent-box {
@@ -74,6 +74,8 @@ for i, (agent, status) in enumerate(agent_data.items()):
         st.markdown(f"<div class='kpi-card'><h4>{agent}</h4><p>Status: {status['status']}</p><p>Last Msg: {status['last_message']}</p></div>", unsafe_allow_html=True)
 
 # ─── ESG Metrics ──────────────────────────────────────────────
+st.text("")
+st.text("")
 st.subheader("ESG Performance")
 esg = get_esg_metrics()
 
