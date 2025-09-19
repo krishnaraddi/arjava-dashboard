@@ -23,24 +23,36 @@ def inject_css():
     body {
         background-color: #f4f4f4;
         font-family: 'Segoe UI', sans-serif;
-        color: #000000;  /* Set default text color to black */
+        color: #000000;  /* Default text color: black */
     }
+
     .logo {
         width: 180px;
         margin-bottom: 10px;
     }
+
     .header {
         font-size: 32px;
         font-weight: bold;
-        color: #000000;  /* Override header color to black */
+        color: #ffffff !important;  /* Header text: white */
         margin-bottom: 20px;
     }
+
     .kpi-card {
         background-color: #ffffff;
         padding: 20px;
         border-radius: 10px;
         box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        color: #000000;  /* Ensure KPI card text is black */
+        color: #000000;  /* KPI card text: black */
+    }
+
+    .agent-box {
+        background-color: #ffffff;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+        color: #000000 !important;  /* Agent labels: black */
+        font-weight: 600;
     }
     </style>
     """, unsafe_allow_html=True)
