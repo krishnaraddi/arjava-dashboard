@@ -16,12 +16,14 @@ def health_check():
 st.set_page_config(page_title="Aarjava Dashboard", layout="wide")
 
 # ─── Custom CSS ───────────────────────────────────────────────
+   
 def inject_css():
     st.markdown("""
     <style>
     body {
         background-color: #f4f4f4;
         font-family: 'Segoe UI', sans-serif;
+        color: #000000;  /* Set default text color to black */
     }
     .logo {
         width: 180px;
@@ -30,7 +32,7 @@ def inject_css():
     .header {
         font-size: 32px;
         font-weight: bold;
-        color: #2c3e50;
+        color: #000000;  /* Override header color to black */
         margin-bottom: 20px;
     }
     .kpi-card {
@@ -38,10 +40,10 @@ def inject_css():
         padding: 20px;
         border-radius: 10px;
         box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        color: #000000;  /* Ensure KPI card text is black */
     }
     </style>
     """, unsafe_allow_html=True)
-
 inject_css()
 
 # ─── Logo and Header ──────────────────────────────────────────
